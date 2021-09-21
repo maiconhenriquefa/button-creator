@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    background: #112;
+    color: honeydew;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+}
+
+input {
+    display: block;
+    font-family: monospace;
+    font-size: 1.1rem;
+    margin-bottom: .8rem;
+}
+
+.button-creator {
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: 30px;
+    padding: 30px;
+    grid-template-columns: 300px 1fr;
+}
+
+#controles {
+    font-family: monospace;
+    font-size: 1.1rem;
+    background: rgba(138, 125, 125, 0.719);
+    padding: 1rem ;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.404);
+}
+
+.css {
+    font-family: monospace;
+    color: rgb(219, 189, 18);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.css span {
+    display: block;
+    margin-bottom: .5rem;
+}
