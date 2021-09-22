@@ -36,6 +36,7 @@ input {
 
 .css {
     font-family: monospace;
+    font-size: 20px;
     color: rgb(219, 189, 18);
     margin-top: 40px;
     display: flex;
@@ -45,4 +46,9 @@ input {
 .css span {
     display: block;
     margin-bottom: .5rem;
+}
+
+label span{
+    color: rgba(0, 0, 0, 0.719);
+    font-size: 15px;
 }

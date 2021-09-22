@@ -10,9 +10,11 @@ const handleStyle = {
     },
     height(value){
         this.element.style.height=`${value}px`;
+        controles.height.previousElementSibling.innerHTML = 'Height' +`<span> ${value}px</span>`;
     },
     width(value){
         this.element.style.width=`${value}px`;
+        controles.width.previousElementSibling.innerHTML = 'Width' +`<span> ${value}px</span>`;
     },
     texto(value){
         this.element.innerText=value;
@@ -25,6 +27,7 @@ const handleStyle = {
     },
     borderRadius(value){
         this.element.style.borderRadius=`${value}px`;
+        controles.borderRadius.previousElementSibling.innerHTML = 'Border-radius' +`<span> ${value}px</span>`;
     },
     fontFamily(value){
         this.element.style.fontFamily=value;
@@ -38,5 +41,24 @@ function handleChange(event) {
     const name = event.target.name;
     const value = event.target.value;
 
-    handleStyle[name](value); 
+    handleStyle[name](value);
+    showCss();
+    saveValues(name,value);
+}
+
+function saveValues(name,value) {
+    localStorage[name] = value;
+}
+
+function setValues() {
+    const properties = Object.keys(localStorage);
+    properties.forEach(properties => {
+        handleStyle[properties](localStorage[properties])
+        controles.elements[properties].value = localStorage[properties];
+    })
+    showCss();
+}
+
+function showCss(){
+    cssText.innerHTML = `<span>${btn.style.cssText.split('; ').join(';</span><span>')}`;
 }
